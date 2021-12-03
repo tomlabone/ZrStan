@@ -20,11 +20,8 @@ Simulated bioassay data were calculated starting with the sex, weight, *t*, *Δt
 | 50   |   Zr\_01 |    m  |      81 |    4.956 |  0.030556   |     0   |      0.19551  |     0.0083008 |
 
 
-
-
-![Simulated zirconium urine and blood plasma data for *16* subjects from run *50* of the simulation.[\[fig:Simulated-zirconium-urine\]]{#fig:Simulated-zirconium-urine label="fig:Simulated-zirconium-urine"}](UrineSpagSim.png "fig:")
-![Simulated zirconium urine and blood plasma data for *16* subjects from run *50* of the simulation.[\[fig:Simulated-zirconium-urine\]]{#fig:Simulated-zirconium-urine label="fig:Simulated-zirconium-urine"}](PlasmaSpagSim.png "fig:")
-
+![](/zrpix/UrineSpagSim.png)
+![](/zrpix/PlasmaSpagSim.png)
 
 
 The R script *ZrDataSim.R* reads in the data from a specified run of the simulated data, the *50th* run in this example, and creates a data file *Zr612-50.data.R* and an init file *Zr612-50.init.R* that are readable by the cmdstan code *zircon-all.stan*.
