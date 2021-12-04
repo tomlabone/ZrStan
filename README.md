@@ -474,7 +474,7 @@ The intake *β* for an individual subject is a parameter to estimate unlike in t
 
 ### Model
 
-The all the subjects in the population model had known quantities of zirconium injected that were normalized to *β=1* in order to facilitate comparisons of bioassay data from subject to subject. When the data from an individual are modeled the quantity injected *\beta* is an unknown parameter to be estimated. Having the intake and blood plasma volume as parameters to estimate is a significant source of uncertainty in the final parameter estimates for a out-of-sample subject.
+The all the subjects in the population model had known quantities of zirconium injected that were normalized to *β=1* in order to facilitate comparisons of bioassay data from subject to subject. When the data from an individual are modeled the quantity injected *β* is an unknown parameter to be estimated. Having the intake and blood plasma volume as parameters to estimate is a significant source of uncertainty in the final parameter estimates for a out-of-sample subject.
 
     model {
       Omega ~ lkj_corr(Eta);
