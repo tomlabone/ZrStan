@@ -24,7 +24,7 @@ Simulated bioassay data were calculated starting with the sex, weight, *t*, *Δt
 ![](/zrpix/PlasmaSpagSim.png)
 
 
-The R script *ZrDataSim.R* (in the *R-code* folder) reads in the data from a specified run of the simulated data, the *50th* run in this example, and creates a data file *Zr612-50.data.R* and an init file *Zr612-50.init.R* that are readable by the cmdstan code *zircon-all.stan*.
+The R script *ZrDataSim.R* (in the *R-code* folder) reads in the data from a specified run of the simulated data, the *50th* run in this example, and creates a data file *Zr612-50.data.R* and an init file *Zr612-50.init.R* that are readable by the cmdstan code *zircon-all.stan* (all three of which are in the */cmdstan-home/Zr* folder).
 
 Computing Environment
 ---------------------
@@ -46,11 +46,11 @@ The following steps give instructions on how to assemble simulated bioassay data
 
 4.  Run the first part of *Zrind-Sim.R* to prepare the cmdstan data file for subject *10* from run *50* of the simulated data and to perform a standard regression of the reference bioassay functions on the simulated bioassay data for this subject.
 
-5.  Run cmdstan program *zircon-in.stan* from the bash script *Zr\_10.sh*.
+5.  Run cmdstan program *zircon-ind.stan* from the bash script *Zr\_10.sh*.
 
 6.  Run the second half of *Zrind-Sim.R* to analyze the Stan output.
 
-The three R scripts are in the main level of the GitHub directory and are not discussed any further because they are only used to prepare and analyze cmdstan output data. The sub directories of GitHub are
+The three R scripts in the *R-code* flder are not discussed any further because they are only used to prepare and analyze cmdstan output data. The other sub directories of GitHub are
 
 -   cmdstan-home: bash scripts (and when you run it, cmdstan)
 
@@ -69,7 +69,7 @@ The cmdstan code and bash scripts are discussed in more detail in the following 
 Bash script for Population Model
 --------------------------------
 
-The bash script *Zr-all-50.sh* shown below runs the cmdstan code with *3000* samples for the warm up followed by *10000* samples from the posterior distribution. The biokinetic model parameters, prior distributions, and bioassay data are read from *Zr612-50.data.R* and the starting values for the parameters from *Zr612-50.init.R*. Note that if a starting value is not defined for a given parameter Stan uses a randomly drawn value. The posterior samples for each parameter are written to *Zr612-50.csv*. This script assumes that it and the folder Zr reside in the default cmdstan-home folder as described in the documentation for cmdstan [@stan_team_cmdstan_2021].
+The bash script *Zr-all-50.sh* shown below runs the cmdstan code with *3000* samples for the warm up followed by *10000* samples from the posterior distribution. The biokinetic model parameters, prior distributions, and bioassay data are read from *Zr612-50.data.R* and the starting values for the parameters from *Zr612-50.init.R*. Note that if a starting value is not defined for a given parameter Stan uses a randomly drawn value. The posterior samples for each parameter are written to *Zr612-50.csv*. This script assumes that it and the folder Zr reside in the default cmdstan-home folder as described in the documentation for cmdstan (Stan Development Team, 2021a).
 
     #!/bin/bash
     Zr/zircon-all \
@@ -545,5 +545,7 @@ Bibliography
 Birchall, A. and A. C. James (June 1989). “A microcomputer algorithm for solving first-order compartmental models involving recycling.” In: Health physics 56.6, pp. 857–868. issn: 0017-9078. doi: 10.1097/00004032-198906000-00003.
 
 Carpenter, Bob et al. (Jan. 11, 2017). “Stan: A Probabilistic Programming Language”. In: Journal of Statistical Software 76.1. Number: 1, pp. 1–32. issn: 1548-7660. doi: 10.18637/jss.v076.i01.
+
+Stan Development Team (Aug. 12, 2021a). Cmdstan User Guide. Version 2.27. url: https://mc-stan.org.
 
 Valpine, Perry de et al. (Apr. 3, 2017). “Programming With Models:Writing Statistical Algorithms for General Model Structures With NIMBLE”. In: Journal of Computational and Graphical Statistics 26.2, pp. 403–413. issn:1061-8600. doi:10.1080/10618600.2016.1172487.
